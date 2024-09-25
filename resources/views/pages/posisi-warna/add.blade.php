@@ -32,11 +32,11 @@
 
             <div class="form-group row">
                 <div class="col-md-3 text-md-right">
-                    <label class="col-form-label control-label" for="kain-select">Kain</label>
+                    <label class="col-form-label control-label" for="kain">Kain</label>
                 </div>
 
                 <div class="col-md-6">
-                    <select class="form-control selectric" name="kain-select">
+                    <select class="form-control selectric" name="kain">
                         @foreach ($kain->orderBy('name', 'ASC')->get() as $item)
                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach
@@ -46,11 +46,11 @@
 
             <div class="form-group row">
                 <div class="col-md-3 text-md-right">
-                    <label class="col-form-label control-label" for="warna-select">Warna</label>
+                    <label class="col-form-label control-label" for="warna">Warna</label>
                 </div>
 
                 <div class="col-md-6">
-                    <select class="form-control selectric" name="warna-select">
+                    <select class="form-control selectric" name="warna">
                         @foreach ($kain->orderBy('name', 'ASC')->get() as $item)
                         <option value="{{ $item->colour->id }}">{{ $item->colour->toString() }}</option>
                         @endforeach

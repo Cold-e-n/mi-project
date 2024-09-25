@@ -56,7 +56,8 @@ class PosisiWarnaController extends Controller
     public function store(Request $request)
     {
         $seksi = intval($request->input('seksi'));
-        // return redirect()->route('posisi-warna.index');
+
+        return redirect()->route('posisi-warna.index');
     }
 
     /**

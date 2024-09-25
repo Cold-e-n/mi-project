@@ -85,13 +85,6 @@ class PosisiWarnaController extends Controller
         ];
 
         return view('pages.posisi-warna.edit', $data);
-    }
-
-    /**
-     *
-     */
-    public function update(Request $request, PosisiWarna $posisiWarna)
-    {
         dd($request->input->warna);
         // return redirect()->route('posisi-warna.edit', $posisiWarna);
     }

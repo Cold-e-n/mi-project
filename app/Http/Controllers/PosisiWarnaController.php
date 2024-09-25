@@ -55,9 +55,23 @@ class PosisiWarnaController extends Controller
      */
     public function store(Request $request)
     {
+        $noWB = $request->input('no-wb');
+        $kain = intval($request->input('kain'));
+        $warna = intval($request->input('warna'));
+        $noSisir = $request->input('no-sisir');
+        $cones = $request->input('cones');
         $seksi = intval($request->input('seksi'));
 
-        // return redirect()->route('posisi-warna.index');
+        $data = [
+            'fabric_id' => $kain,
+            'colour_id' => $warna,
+            'cones' => $cones,
+            'seksi' => $seksi,
+            'sisir' => $noSisir,
+            'wb_no' => $noWB
+        ];
+
+        return redirect()->route('posisi-warna.index')->with('success_message', 'Data berhasil ditambahkan.');
     }
 
     /**

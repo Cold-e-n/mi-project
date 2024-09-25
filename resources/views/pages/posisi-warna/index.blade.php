@@ -5,6 +5,19 @@
 @section('page-title','Posisi Benang Warna')
 
 @section('page-content')
+
+@if (Session::has('success_message'))
+<div class="alert alert-success alert-dismissible show fade">
+    <div class="alert-body">
+        <button class="close" data-dismiss="alert">
+            <span>×</span>
+        </button>
+
+        <i class="fas fa-check"></i> {{ session('success_message') }}
+    </div>
+</div>
+@endif
+
 <p>
     <a href="{{ route('posisi-warna.add') }}" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Tambah</a>
 </p>

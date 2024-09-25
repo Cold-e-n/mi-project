@@ -71,7 +71,7 @@ class PosisiWarnaController extends Controller
             'wb_no' => $noWB,
         ];
 
-        return redirect()->route('posisi-warna.index')->with('success_message', 'Data berhasil ditambahkan.');
+        // return redirect()->route('posisi-warna.index')->with('success_message', 'Data berhasil ditambahkan.');
     }
 
     /**
@@ -85,8 +85,14 @@ class PosisiWarnaController extends Controller
         ];
 
         return view('pages.posisi-warna.edit', $data);
-        dd($request->input->warna);
-        // return redirect()->route('posisi-warna.edit', $posisiWarna);
+    }
+
+    /**
+     *
+     */
+    public function update(Request $request, PosisiWarna $posisiWarna)
+    {
+
     }
 
     /**

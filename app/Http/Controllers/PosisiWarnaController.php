@@ -69,7 +69,6 @@ class PosisiWarnaController extends Controller
             'seksi' => $seksi,
             'sisir' => $noSisir,
             'wb_no' => $noWB,
-            1
         ];
 
         return redirect()->route('posisi-warna.index')->with('success_message', 'Data berhasil ditambahkan.');

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\PosisiWarnaRequest;
 use App\Helpers\PerhitunganWarna;
 use App\Models\Kain;
 use App\Models\TableWarna;
@@ -53,34 +53,9 @@ class PosisiWarnaController extends Controller
     /**
      *
      */
-    public function store(Request $request)
+    public function store(PosisiWarnaRequest $request)
     {
-        $noWB = $request->input('no-wb');
-        $kain = intval($request->input('kain'));
-        $warna = intval($request->input('warna'));
-        $noSisir = $request->input('no-sisir');
-        $cones = $request->input('cones');
-        $seksi = intval($request->input('seksi'));
-
-        $request->validate([
-            'kain' => 'required',
-            'warna' => 'required',
-            'cones' => 'required',
-            'seksi' => 'required',
-            'no-sisir' => 'required',
-            'no-wb' => 'required'
-        ]);
-        return redirect()->route('posisi-warna.index')->with('success_message', 'Data berhasil ditambahkan.');
-
-        // $data = [
-        //     'fabric_id' => $kain,
-        //     'colour_id' => $warna,
-        //     'cones' => $cones,
-        //     'seksi' => $seksi,
-        //     'sisir' => $noSisir,
-        //     'wb_no' => $noWB,
-        // ];
-
+        // return redirect()->route('posisi-warna.index')->with('success_message', 'Data berhasil ditambahkan.');
     }
 
     /**
@@ -99,7 +74,7 @@ class PosisiWarnaController extends Controller
     /**
      *
      */
-    public function update(Request $request, PosisiWarna $posisiWarna)
+    public function update(PosisiWarnaRequest $request, PosisiWarna $posisiWarna)
     {
 
     }

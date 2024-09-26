@@ -64,15 +64,5 @@ class TableWarnaSeeder extends Seeder
             'fabric_id' => 4,
             'comb' => '#44.1'
         ]);
-
-        TableWarna::Create([
-            'type' => json_encode([
-                'type' => '20/2 RED',
-                'distance' => 231,
-                'total' => 23
-            ]),
-            'fabric_id' => 5,
-            'comb' => '#44.288'
-        ]);
     }
 }

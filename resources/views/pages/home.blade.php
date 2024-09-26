@@ -16,7 +16,7 @@
 
             <div class="card-body">
                 <div class="list-group">
-                @foreach ($posisiWarna->limit(5)->get() as $item)
+                @foreach ($posisiWarna->get() as $item)
                     <a href="{{ route('posisi-warna.detail', $item) }}" class="list-group-item list-group-item-action">{{ $kain->find($item->fabric_id)->name }}</a>
                 @endforeach
 

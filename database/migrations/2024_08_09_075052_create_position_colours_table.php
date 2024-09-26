@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('fabric_id');
             $table->unsignedBigInteger('colour_id');
-            $table->integer('cones');
+            $table->string('cones');
             $table->integer('seksi');
             $table->string('sisir');
             $table->string('wb_no');

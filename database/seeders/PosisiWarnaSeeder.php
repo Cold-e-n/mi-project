@@ -49,14 +49,5 @@ class PosisiWarnaSeeder extends Seeder
             'wb_no'=> '0001'
         ]);
 
-        PosisiWarna::Create([
-            'fabric_id' => 5,
-            'colour_id' => 5,
-            'cones' => 450,
-            'seksi' => 12,
-            'sisir' => '#44.288',
-            'wb_no'=> '0002'
-        ]);
-
     }
 }

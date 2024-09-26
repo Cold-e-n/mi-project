@@ -22,13 +22,13 @@
 
             <div class="form-group row">
                 <div class="col-md-3 text-md-right">
-                    <label class="col-form-label control-label" for="no-wb">No. WB</label>
+                    <label class="col-form-label control-label" for="wb_no">No. WB</label>
                 </div>
 
                 <div class="col-md-6">
-                    <input class="form-control @error('no-wb') is-invalid @enderror" id="no-wb" name="no-wb" type="text" />
+                    <input class="form-control @error('wb_no') is-invalid @enderror" id="wb_no" name="wb_no" type="text" value="{{ old('wb_no') }}" />
 
-                    @error('no-wb')
+                    @error('wb_no')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -39,11 +39,11 @@
 
             <div class="form-group row">
                 <div class="col-md-3 text-md-right">
-                    <label class="col-form-label control-label" for="kain">Kain</label>
+                    <label class="col-form-label control-label" for="fabric_id">Kain</label>
                 </div>
 
                 <div class="col-md-6">
-                    <select class="form-control selectric" name="kain">
+                    <select class="form-control selectric" name="fabric_id">
                         @foreach ($kain->orderBy('name', 'ASC')->get() as $item)
                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach
@@ -53,11 +53,11 @@
 
             <div class="form-group row">
                 <div class="col-md-3 text-md-right">
-                    <label class="col-form-label control-label" for="warna">Warna</label>
+                    <label class="col-form-label control-label" for="colour_id">Warna</label>
                 </div>
 
                 <div class="col-md-6">
-                    <select class="form-control selectric" name="warna">
+                    <select class="form-control selectric" name="colour_id">
                         @foreach ($kain->orderBy('name', 'ASC')->get() as $item)
                         <option value="{{ $item->colour->id }}">{{ $item->colour->toString() }}</option>
                         @endforeach
@@ -67,11 +67,17 @@
 
             <div class="form-group row">
                 <div class="col-md-3 text-md-right">
-                    <label class="col-form-label control-label" for="no-sisir">No. Sisir</label>
+                    <label class="col-form-label control-label" for="sisir">No. Sisir</label>
                 </div>
 
                 <div class="col-md-6">
-                    <input class="form-control" id="no-sisir" name="no-sisir" placeholder="#" type="text" />
+                    <input class="form-control @error('sisir') is-invalid @enderror" id="sisir" name="sisir" placeholder="#" type="text" value="{{ old('sisir') }}" />
+
+                    @error('sisir')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                    @enderror
                 </div>
             </div>
 
@@ -84,7 +90,13 @@
                     <div class="row">
 
                         <div class="col-md-3">
-                            <input class="form-control" id="cones" name="cones" placeholder="Cones" type="text" />
+                            <input class="form-control @error('cones') is-invalid @enderror" id="cones" name="cones" placeholder="Cones" type="text" value="{{ old('cones') }}" />
+
+                            @error('cones')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
 
                         <div class="col-md-1 text-md-center">
@@ -92,7 +104,13 @@
                         </div>
 
                         <div class="col-md-3">
-                            <input class="form-control" id="seksi" name="seksi" placeholder="Seksi" type="number" />
+                            <input class="form-control @error('seksi') is-invalid @enderror" id="seksi" name="seksi" placeholder="Seksi" type="number" value="{{ old('seksi') }}" />
+
+                            @error('seksi')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
 
                     </div>

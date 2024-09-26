@@ -62,16 +62,25 @@ class PosisiWarnaController extends Controller
         $cones = $request->input('cones');
         $seksi = intval($request->input('seksi'));
 
-        $data = [
-            'fabric_id' => $kain,
-            'colour_id' => $warna,
-            'cones' => $cones,
-            'seksi' => $seksi,
-            'sisir' => $noSisir,
-            'wb_no' => $noWB,
-        ];
+        $request->validate([
+            'kain' => 'required',
+            'warna' => 'required',
+            'cones' => 'required',
+            'seksi' => 'required',
+            'no-sisir' => 'required',
+            'no-wb' => 'required'
+        ]);
+        return redirect()->route('posisi-warna.index')->with('success_message', 'Data berhasil ditambahkan.');
 
-        // return redirect()->route('posisi-warna.index')->with('success_message', 'Data berhasil ditambahkan.');
+        // $data = [
+        //     'fabric_id' => $kain,
+        //     'colour_id' => $warna,
+        //     'cones' => $cones,
+        //     'seksi' => $seksi,
+        //     'sisir' => $noSisir,
+        //     'wb_no' => $noWB,
+        // ];
+
     }
 
     /**

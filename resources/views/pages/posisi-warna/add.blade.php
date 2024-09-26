@@ -26,7 +26,14 @@
                 </div>
 
                 <div class="col-md-6">
-                    <input class="form-control" id="no-wb" name="no-wb" type="text" />
+                    <input class="form-control @error('no-wb') is-invalid @enderror" id="no-wb" name="no-wb" type="text" />
+
+                    @error('no-wb')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                    @enderror
+
                 </div>
             </div>
 

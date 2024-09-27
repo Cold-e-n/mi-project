@@ -33,5 +33,10 @@ class KainSeeder extends Seeder
             'colour_id' => 4
         ]);
 
+        Kain::Create([
+            'name' => '200R-2220(L)',
+            'colour_id' => 5
+        ]);
+
     }
 }

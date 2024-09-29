@@ -71,7 +71,7 @@ class PerhitunganWarna
         {
             $i = $this->nextPosCurrentSect($current);
 
-            if($i > $distance)
+            while ($i > $distance)
             {
                 $current[] = $distance;
 
@@ -106,7 +106,7 @@ class PerhitunganWarna
         {
             $i = $this->nextPosCurrentSect($result);
 
-            if($i > $distance)
+            while ($i > $distance)
             {
                 $result[] = $distance;
 

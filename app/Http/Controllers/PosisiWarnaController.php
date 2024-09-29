@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PosisiWarnaRequest;
 use App\Helpers\PerhitunganWarna;
+use App\Helpers\PerhitunganWarnaTest;
 use App\Models\Kain;
 use App\Models\TableWarna;
 use App\Models\PosisiWarna;
@@ -85,6 +86,20 @@ class PosisiWarnaController extends Controller
     public function destroy(PosisiWarna $posisiWarna)
     {
 
+    }
+
+    /**
+     *
+     */
+    public function test()
+    {
+        $data = [
+            'kain'=> Kain::find(5),
+            'posisiWarna' => PosisiWarna::find(5)
+        ];
+        $data['pw'] = new PerhitunganWarnaTest($data['kain'], $data['posisiWarna']);
+
+        return view('pages.posisi-warna.test', $data);
     }
 
 }

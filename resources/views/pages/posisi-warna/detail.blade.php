@@ -12,7 +12,7 @@
 <div class="card card-default" id="posisi-warna" style="font-family: 'Consolas';">
     <div class="card-body">
 
-        <div class="row mb-5">
+        {{-- <div class="row mb-5">
             <div class="col">
 
                 <div class="row">
@@ -69,7 +69,9 @@
 
             </div>
             @endforeach
-        </div>
+        </div> --}}
+
+        @dump($perhitunganWarna->hitung())
 
     </div> <!-- /.card-body -->
 </div>

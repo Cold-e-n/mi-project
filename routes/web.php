@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Route;
 
 // Home Page
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/test', [PosisiWarnaController::class, 'test']);
 
 // Halaman 'Table Warna'
 Route::group([

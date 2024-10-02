@@ -173,20 +173,4 @@ class PerhitunganWarna
         return $this->result;
     }
 
-    /**
-     *
-     */
-    public function check()
-    {
-        $n = $this->hitung();
-        $arr = array_fill(1, $this->posisiWarna->seksi, null);
-
-        foreach ($n as $key => $value)
-        {
-            $arr[$key] = $value;
-        }
-
-        return $arr;
-    }
-
 }

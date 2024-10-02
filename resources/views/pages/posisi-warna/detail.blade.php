@@ -12,7 +12,7 @@
 <div class="card card-default" id="posisi-warna" style="font-family: 'Consolas';">
     <div class="card-body">
 
-        {{-- <div class="row mb-5">
+        <div class="row mb-5">
             <div class="col">
 
                 <div class="row">
@@ -38,7 +38,7 @@
             <div class="w-100 mt-5"></div>
             @endif
 
-            <div class="col @if (($keys + 1) != $posisiWarna->seksi) border-right @endif">
+            <div class="col @if (($keys) != $posisiWarna->seksi) border-right @endif">
 
                 <div class="row">
                     <div class="col-12 mb-5">{{ $loop->iteration }}</div>
@@ -69,9 +69,7 @@
 
             </div>
             @endforeach
-        </div> --}}
-
-        @dump($perhitunganWarna->hitung())
+        </div>
 
     </div> <!-- /.card-body -->
 </div>

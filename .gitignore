@@ -19,5 +19,3 @@ mi.code-workspace
 /.fleet
 /.idea
 /.vscode
-/app/Helpers/PerhitunganWarnaTest.php
-/resources/views/pages/posisi-warna/test.blade.php

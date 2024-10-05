@@ -8,6 +8,7 @@ use App\Helpers\PerhitunganWarnaTest;
 use App\Models\Kain;
 use App\Models\TableWarna;
 use App\Models\PosisiWarna;
+use GuzzleHttp\Promise\Create;
 
 class PosisiWarnaController extends Controller
 {
@@ -56,7 +57,11 @@ class PosisiWarnaController extends Controller
      */
     public function store(PosisiWarnaRequest $request)
     {
-        // return redirect()->route('posisi-warna.index')->with('success_message', 'Data berhasil ditambahkan.');
+        $valiadated = $request->validated();
+        $pw = new PosisiWarna();
+        $pw->create($valiadated);
+
+        return redirect()->route('posisi-warna.index')->with('success_message', 'Data baru berhasil ditambahin.');
     }
 
     /**
@@ -86,20 +91,6 @@ class PosisiWarnaController extends Controller
     public function destroy(PosisiWarna $posisiWarna)
     {
 
-    }
-
-    /**
-     *
-     */
-    public function test()
-    {
-        $data = [
-            'kain'=> Kain::find(5),
-            'posisiWarna' => PosisiWarna::find(5)
-        ];
-        $data['pw'] = new PerhitunganWarnaTest($data['kain'], $data['posisiWarna']);
-
-        return view('pages.posisi-warna.test', $data);
     }
 
 }

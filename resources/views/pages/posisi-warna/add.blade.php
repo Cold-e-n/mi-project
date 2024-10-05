@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <select class="form-control selectric" name="fabric_id">
+                    <select class="form-control selectric" name="fabric_id" required>
                         @foreach ($kain->orderBy('name', 'ASC')->get() as $item)
                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach
@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <select class="form-control selectric" name="colour_id">
+                    <select class="form-control selectric" name="colour_id" required>
                         @foreach ($kain->orderBy('name', 'ASC')->get() as $item)
                         <option value="{{ $item->colour->id }}">{{ $item->colour->toString() }}</option>
                         @endforeach

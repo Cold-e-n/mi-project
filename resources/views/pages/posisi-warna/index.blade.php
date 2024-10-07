@@ -4,6 +4,10 @@
 
 @section('page-title','Posisi Benang Warna')
 
+@push('stylesheet')
+<link rel="stylesheet" href="{{ asset('assets/stisla/modules/sweetalert2/dist/sweetalert2.css') }}" />
+@endpush
+
 @section('page-content')
 
 @if (Session::has('success_message'))
@@ -45,7 +49,7 @@
                         <td>
                             <a href="{{ route('posisi-warna.detail', $item) }}" class="btn btn-icon btn-primary"><i class="fas fa-search"></i></a>
                             <a href="{{ route('posisi-warna.edit', $item) }}" class="btn btn-icon btn-primary"><i class="fas fa-edit"></i></a>
-                            <a href="{{ route('posisi-warna.delete', $item) }}" class="btn btn-icon btn-danger"><i class="fas fa-trash"></i></a>
+                            <a href="{{ route('posisi-warna.delete', $item) }}" class="btn btn-icon btn-danger" id="btn-hapus-item"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>
                     @endforeach
@@ -58,3 +62,8 @@
     </div><!--/.card-body -->
 </div><!--/.card -->
 @endsection
+
+@push('scripts')
+<script src="{{ asset('assets/stisla/modules/sweetalert2/dist/sweetalert2.all.js') }}" type="text/javascript"></script>
+<script src="{{ asset('assets/stisla/js/page/posisi-warna/index.js') }}" type="text/javascript"></script>
+@endpush

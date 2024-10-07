@@ -18,16 +18,16 @@
     <div class="card-body">
 
         <form action="{{ route('posisi-warna.update', $posisiWarna) }}" method="post">
-            @method('put')
             @csrf
+            @method('put')
 
             <div class="form-group row">
                 <div class="col-md-3 text-md-right">
-                    <label class="col-form-label control-label" for="no-wb">No. WB</label>
+                    <label class="col-form-label control-label" for="wb_no">No. WB</label>
                 </div>
 
                 <div class="col-md-6">
-                    <input class="form-control" id="no-wb" name="no-wb" type="text" />
+                    <input class="form-control" id="wb_no" name="wb_no" type="text" value="{{ $posisiWarna->wb_no }}" />
                 </div>
             </div>
 
@@ -39,7 +39,7 @@
                 <div class="col-md-6">
                     <select class="form-control selectric" name="kain">
                         @foreach ($kain->orderBy('name', 'ASC')->get() as $item)
-                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        <option value="{{ $item->id }}" @if ($posisiWarna->fabric_id == $item->id) selected @endif>{{ $item->name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -53,7 +53,7 @@
                 <div class="col-md-6">
                     <select class="form-control selectric" name="warna">
                         @foreach ($kain->orderBy('name', 'ASC')->get() as $item)
-                        <option value="{{ $item->colour->id }}">{{ $item->colour->toString() }}</option>
+                        <option value="{{ $item->colour->id }}" @if ($posisiWarna->fabric_id == $item->colour->id) selected @endif>{{ $item->colour->toString() }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -61,11 +61,11 @@
 
             <div class="form-group row">
                 <div class="col-md-3 text-md-right">
-                    <label class="col-form-label control-label" for="no-sisir">No. Sisir</label>
+                    <label class="col-form-label control-label" for="sisir">No. Sisir</label>
                 </div>
 
                 <div class="col-md-6">
-                    <input class="form-control" id="no-sisir" name="no-sisir" placeholder="#" type="text" />
+                    <input class="form-control" id="sisir" name="sisir" placeholder="#" type="text" value="{{ $posisiWarna->sisir }}" />
                 </div>
             </div>
 
@@ -78,7 +78,7 @@
                     <div class="row">
 
                         <div class="col-md-3">
-                            <input class="form-control" id="cones" name="cones" placeholder="Cones" type="number" />
+                            <input class="form-control" id="cones" name="cones" placeholder="Cones" type="text" value="{{ $posisiWarna->cones }}"/>
                         </div>
 
                         <div class="col-md-1 text-md-center">
@@ -86,7 +86,7 @@
                         </div>
 
                         <div class="col-md-3">
-                            <input class="form-control" id="seksi" name="seksi" placeholder="Seksi" type="number" />
+                            <input class="form-control" id="seksi" name="seksi" placeholder="Seksi" type="number" value="{{ $posisiWarna->seksi }}" />
                         </div>
 
                     </div>

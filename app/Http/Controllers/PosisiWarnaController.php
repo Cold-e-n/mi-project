@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PosisiWarnaRequest;
 use App\Helpers\PerhitunganWarna;
-use App\Helpers\PerhitunganWarnaTest;
 use App\Models\Kain;
 use App\Models\TableWarna;
 use App\Models\PosisiWarna;
-use GuzzleHttp\Promise\Create;
 
 class PosisiWarnaController extends Controller
 {
@@ -82,7 +80,7 @@ class PosisiWarnaController extends Controller
      */
     public function update(PosisiWarnaRequest $request, PosisiWarna $posisiWarna)
     {
-
+        dd($request);
     }
 
     /**
@@ -90,7 +88,7 @@ class PosisiWarnaController extends Controller
      */
     public function destroy(PosisiWarna $posisiWarna)
     {
-
+        return redirect()->route('posisi-warna.index')->with('success_message', 'Data baru berhasil dihapus.');
     }
 
 }

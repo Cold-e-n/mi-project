@@ -84,10 +84,12 @@ class PosisiWarnaController extends Controller
     }
 
     /**
-     *
+     * Hapus data spesifik.
      */
     public function destroy(PosisiWarna $posisiWarna)
     {
+        $posisiWarna->delete();
+
         return response()->json([
             'message' => 'Data udah dihapus.'
         ]);

@@ -88,7 +88,9 @@ class PosisiWarnaController extends Controller
      */
     public function destroy(PosisiWarna $posisiWarna)
     {
-        return redirect()->route('posisi-warna.index')->with('success_message', 'Data baru berhasil dihapus.');
+        return response()->json([
+            'message' => 'Data udah dihapus.'
+        ]);
     }
 
 }

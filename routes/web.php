@@ -31,7 +31,7 @@ Route::group([
         Route::get('/edit/{posisiWarna}', 'edit')->name('edit');
         Route::put('/update/{posisiWarna}', 'update')->name('update');
         Route::get('/{posisiWarna}', 'show')->name('detail');
-        Route::get('/delete/{posisiWarna}', 'destroy')->name('delete');
+        Route::delete('/delete/{posisiWarna}', 'destroy')->name('delete');
     });
 });
 

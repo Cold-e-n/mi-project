@@ -6,6 +6,7 @@
 
 @push('stylesheet')
 <link rel="stylesheet" href="{{ asset('assets/stisla/modules/selectric/public/selectric.css') }}" />
+<link rel="stylesheet" href="{{ asset('assets/stisla/modules/sweetalert2/dist/sweetalert2.css') }}" />
 @endpush
 
 @section('page-content')
@@ -17,7 +18,7 @@
 
     <div class="card-body">
 
-        <form action="{{ route('posisi-warna.store') }}" class="mb-3" id="form-tambah-posisi-warna" method="post">
+        <form action="{{ route('posisi-warna.store') }}" class="mb-3" id="tambah-posisi-warna" method="post">
             @csrf
 
             <div class="form-group row">
@@ -135,5 +136,5 @@
 
 @push('scripts')
 <script src="{{ asset('assets/stisla/modules/selectric/public/jquery.selectric.min.js') }}"></script>
-<script src="{{ asset('assets/stisla/js/page/posisi-warna/add.js') }}"></script>
+<script src="{{ asset('assets/stisla/modules/sweetalert2/dist/sweetalert2.all.js') }}" type="text/javascript"></script>
 @endpush

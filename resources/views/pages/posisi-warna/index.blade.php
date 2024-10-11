@@ -10,18 +10,6 @@
 
 @section('page-content')
 
-@if (Session::has('success_message'))
-<div class="alert alert-success alert-dismissible show fade">
-    <div class="alert-body">
-        <button class="close" data-dismiss="alert">
-            <span>×</span>
-        </button>
-
-        <i class="fas fa-check"></i> {{ session('success_message') }}
-    </div>
-</div>
-@endif
-
 <p>
     <a href="{{ route('posisi-warna.add') }}" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Tambah</a>
 </p>
@@ -66,4 +54,24 @@
 @push('scripts')
 <script src="{{ asset('assets/stisla/modules/sweetalert2/dist/sweetalert2.all.js') }}" type="text/javascript"></script>
 <script src="{{ asset('assets/stisla/js/page/posisi-warna/index.js') }}" type="text/javascript"></script>
+@if (Session::has("message"))
+<script type="text/javascript">
+const toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer
+        toast.onmouseleave = Swal.resumeTimer
+    }
+})
+
+toast.fire({
+    icon: "success",
+    title: "{{ session('message') }}"
+})
+</script>
+@endif
 @endpush

@@ -2,7 +2,38 @@
  *
  * You can write your CSS code here, DO NOT touch the default JavaScript file
  * because it will make it harder for you to update.
- * 
+ *
  */
 
 /*# sourceMappingURL=custom.css.map */
+#posisi-warna {
+    font-family: 'Consolas';
+}
+
+@media print {
+    body {
+        visibility: hidden;
+    }
+
+    #posisi-warna {
+        font-family: 'Consolas';
+        font-size: 13px;
+        position: absolute;
+        top: 0 !important;
+        visibility: visible;
+    }
+
+    #posisi-warna .border-right {
+        border-right: 1px solid #405D72 !important;
+    }
+
+    #posisi-warna .border-bottom {
+        border-bottom: 1px solid #405D72 !important;
+    }
+
+    @page {
+        margin: 0 !important;
+        size: landscape;
+        top: 0 !important;
+    }
+}

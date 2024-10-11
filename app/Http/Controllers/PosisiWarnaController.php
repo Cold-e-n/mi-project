@@ -7,6 +7,7 @@ use App\Helpers\PerhitunganWarna;
 use App\Models\Kain;
 use App\Models\TableWarna;
 use App\Models\PosisiWarna;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PosisiWarnaController extends Controller
 {
@@ -59,7 +60,7 @@ class PosisiWarnaController extends Controller
         $pw = new PosisiWarna();
         $pw->create($valiadated);
 
-        return redirect()->route('posisi-warna.index')->with('success_message', 'Data baru berhasil ditambahin.');
+        return redirect()->route('posisi-warna.index')->with('message', 'Data baru berhasil ditambahin.');
     }
 
     /**
@@ -94,5 +95,4 @@ class PosisiWarnaController extends Controller
             'message' => 'Data udah dihapus.'
         ]);
     }
-
 }

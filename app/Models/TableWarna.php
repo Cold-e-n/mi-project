@@ -41,12 +41,12 @@ class TableWarna extends Model
         $warnaArr = json_decode($this->type, true);
         $warna = '';
 
+        extract($warnaArr);
+
         if(!array_key_exists('out', $warnaArr))
         {
-            extract($warnaArr);
             $warna = $type.' = '.$total.' H';
         } else {
-            extract($warnaArr);
             $warna = $type.' = '.$total.' H + OUT '.$out['type'].' '.$out['total'].' H';
         }
 

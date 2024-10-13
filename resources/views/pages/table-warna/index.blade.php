@@ -5,30 +5,40 @@
 @section('page-title','Tabel Benang Warna')
 
 @section('page-content')
-<div class="main-content">
-    <section class="section">
+<div class="card" id="tabel-warna" style="font-family: 'Consolas';">
+    <div class="card-body">
 
-        <div class="section-header">
-            <h1>@yield('page-title')</h1>
+        <div class="table-responsive">
+            <table class="table-striped table-md table">
+
+                <tbody>
+                    <tr>
+                        <th>#</th>
+                        <th>Tipe Warna</th>
+                        <th>Jarak Warna</th>
+                        <th>No. Sisir</th>
+                        <th></th>
+                    </tr>
+
+                    @foreach ($warna as $item)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $item->get('type') }}</td>
+                        <td>{{ $item->get('distance') }}</td>
+                        <td>{{ $item->comb }}</td>
+                        <td>
+                            <a href="{{ route('table-warna.detail', $item) }}" class="btn btn-icon btn-primary"><i class="fas fa-search"></i></a>
+                            <a href="" class="btn btn-icon btn-primary"><i class="fas fa-edit"></i></a>
+                            <a href="" class="btn btn-icon btn-danger" id="btn-hapus-item"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    @endforeach
+
+                </tbody>
+            </table>
+
         </div>
 
-        <div class="section-body">
-
-            <div class="card" id="posisi-warna" style="font-family: 'Consolas';">
-
-                <div class="card-body">
-
-                    <div class="list-group">
-                        @foreach ($kain as $item)
-                        <a href="{{route('table-warna.detail', $item)}}" class="list-group-item list-group-item-action">{{$item->name}}</a>
-                        @endforeach
-                    </div>
-
-                </div><!--/.card-body -->
-            </div><!--/.card -->
-
-        </div>
-
-    </section>
-</div>
+    </div><!--/.card-body -->
+</div><!--/.card -->
 @endsection

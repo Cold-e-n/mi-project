@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Kain;
 use App\Models\TableWarna;
-use App\Helpers\PerhitunganWarna;
 use Illuminate\Http\Request;
 
-class TableWarnaController extends Controller
+class WarnaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class TableWarnaController extends Controller
     public function index()
     {
         $data = [
-            'kain' => Kain::all()
+            'warna' => TableWarna::all()
         ];
 
         return view('pages.table-warna.index', $data);
@@ -43,7 +42,7 @@ class TableWarnaController extends Controller
     public function show(TableWarna $tableWarna)
     {
         $data = [
-            'tableWarna' => $tableWarna
+            'warna' => $tableWarna
         ];
 
         return view('pages.table-warna.detail', $data);
@@ -72,5 +71,4 @@ class TableWarnaController extends Controller
     {
         //
     }
-
 }

@@ -26,7 +26,7 @@ class TableWarna extends Model
     ];
 
     /**
-     *
+     * Relasi.
      */
     public function fabric(): HasOne
     {
@@ -34,7 +34,26 @@ class TableWarna extends Model
     }
 
     /**
-     *
+     * Nampilin spesifik data dari benang warna.
+     */
+    public function get($key = 'type')
+    {
+        $warna = json_decode($this->type, true);
+        $result = '';
+
+        extract($warna);
+        if ($key == 'type')
+        {
+            (!array_key_exists('out', $warna)) ? $result = $type : $result = "{$type} + OUT {$out['type']}";
+        } elseif ($key == 'distance') {
+            $result = "{$distance} H";
+        }
+
+        return $result;
+    }
+
+    /**
+     * Menampilkan detail dari benang warna dalam bentuk string.
      */
     public function toString()
     {
@@ -43,7 +62,7 @@ class TableWarna extends Model
 
         extract($warnaArr);
 
-        if(!array_key_exists('out', $warnaArr))
+        if (!array_key_exists('out', $warnaArr))
         {
             $warna = $type.' = '.$total.' H';
         } else {

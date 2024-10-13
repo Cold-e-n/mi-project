@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PosisiWarnaController;
-use App\Http\Controllers\TableWarnaController;
+use App\Http\Controllers\WarnaController;
 use Illuminate\Support\Facades\Route;
 
 // Home Page
@@ -13,7 +13,7 @@ Route::group([
     'prefix' => 'table-warna',
     'as' => 'table-warna.'
 ], function() {
-    Route::controller(TableWarnaController::class)->group(function() {
+    Route::controller(WarnaController::class)->group(function() {
         Route::get('/', 'index')->name('index');
         Route::get('/{tableWarna}', 'show')->name('detail');
     });

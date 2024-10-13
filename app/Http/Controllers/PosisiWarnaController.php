@@ -7,12 +7,11 @@ use App\Helpers\PerhitunganWarna;
 use App\Models\Kain;
 use App\Models\TableWarna;
 use App\Models\PosisiWarna;
-use Barryvdh\DomPDF\Facade\Pdf;
 
 class PosisiWarnaController extends Controller
 {
     /**
-     *
+     * Tampilin semua data.
      */
     public function index()
     {
@@ -25,7 +24,7 @@ class PosisiWarnaController extends Controller
     }
 
     /**
-     *
+     * Nampilin data spesifik.
      */
     public function show(PosisiWarna $posisiWarna)
     {
@@ -39,7 +38,7 @@ class PosisiWarnaController extends Controller
     }
 
     /**
-     *
+     * Form untuk nambah data baru.
      */
     public function create()
     {
@@ -52,19 +51,19 @@ class PosisiWarnaController extends Controller
     }
 
     /**
-     *
+     * Action untuk nambah data baru.
      */
     public function store(PosisiWarnaRequest $request)
     {
-        $valiadated = $request->validated();
+        $validated = $request->validated();
         $pw = new PosisiWarna();
-        $pw->create($valiadated);
+        $pw->create($validated);
 
-        return redirect()->route('posisi-warna.index')->with('message', 'Data baru berhasil ditambahin.');
+        return redirect()->route('posisi-warna.index')->with('message', 'Data baru udah ditambahin.');
     }
 
     /**
-     *
+     * Form untuk ngubah data.
      */
     public function edit(PosisiWarna $posisiWarna)
     {
@@ -77,11 +76,14 @@ class PosisiWarnaController extends Controller
     }
 
     /**
-     *
+     * Action untuk ngubah data.
      */
     public function update(PosisiWarnaRequest $request, PosisiWarna $posisiWarna)
     {
-        dd($request);
+        $validated = $request->validated();
+        $posisiWarna->update($validated);
+
+        return redirect()->route('posisi-warna.index')->with('message', 'Data udah diupdate.');
     }
 
     /**

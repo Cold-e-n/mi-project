@@ -20,7 +20,7 @@
 
 @push('scripts')
 <script type="text/javascript">
-"use strict";
+"use strict"
 
 $(document).ready(() => {
     const btnPrint = $("#btn-print");

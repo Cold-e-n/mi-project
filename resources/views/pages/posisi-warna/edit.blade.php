@@ -19,7 +19,7 @@
 
         <form action="{{ route('posisi-warna.update', $posisiWarna) }}" method="post">
             @csrf
-            @method('put')
+            @method('PUT')
 
             <div class="form-group row">
                 <div class="col-md-3 text-md-right">
@@ -33,11 +33,11 @@
 
             <div class="form-group row">
                 <div class="col-md-3 text-md-right">
-                    <label class="col-form-label control-label" for="kain">Kain</label>
+                    <label class="col-form-label control-label" for="fabric_id">Kain</label>
                 </div>
 
                 <div class="col-md-6">
-                    <select class="form-control selectric" name="kain">
+                    <select class="form-control selectric" name="fabric_id">
                         @foreach ($kain->orderBy('name', 'ASC')->get() as $item)
                         <option value="{{ $item->id }}" @if ($posisiWarna->fabric_id == $item->id) selected @endif>{{ $item->name }}</option>
                         @endforeach
@@ -47,11 +47,11 @@
 
             <div class="form-group row">
                 <div class="col-md-3 text-md-right">
-                    <label class="col-form-label control-label" for="warna">Warna</label>
+                    <label class="col-form-label control-label" for="colour_id">Warna</label>
                 </div>
 
                 <div class="col-md-6">
-                    <select class="form-control selectric" name="warna">
+                    <select class="form-control selectric" name="colour_id">
                         @foreach ($kain->orderBy('name', 'ASC')->get() as $item)
                         <option value="{{ $item->colour->id }}" @if ($posisiWarna->fabric_id == $item->colour->id) selected @endif>{{ $item->colour->toString() }}</option>
                         @endforeach

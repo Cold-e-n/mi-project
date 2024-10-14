@@ -24,7 +24,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->get('type') }}</td>
-                        <td>{{ $item->get('distance') }}</td>
+                        <td>{{ $item->get('distance') }} H</td>
                         <td>{{ $item->comb }}</td>
                         <td>
                             <a href="{{ route('table-warna.detail', $item) }}" class="btn btn-icon btn-primary"><i class="fas fa-search"></i></a>

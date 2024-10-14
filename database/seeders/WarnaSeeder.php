@@ -4,16 +4,16 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\TableWarna;
+use App\Models\Warna;
 
-class TableWarnaSeeder extends Seeder
+class WarnaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        TableWarna::Create([
+        Warna::Create([
             'type' => json_encode([
                 'type' => '20/2 AC BROWN',
                 'distance' => 289,
@@ -27,7 +27,7 @@ class TableWarnaSeeder extends Seeder
             'comb' => '#44.1'
         ]);
 
-        TableWarna::Create([
+        Warna::Create([
             'type' => json_encode([
                 'type' => '50/6 RED',
                 'distance' => 640,
@@ -41,7 +41,7 @@ class TableWarnaSeeder extends Seeder
             'comb' => '#44.1'
         ]);
 
-        TableWarna::Create([
+        Warna::Create([
             'type' => json_encode([
                 'type' => '16.4/2 ROYAL BLUE',
                 'distance' => 575,
@@ -51,7 +51,7 @@ class TableWarnaSeeder extends Seeder
             'comb' => '#44.1'
         ]);
 
-        TableWarna::Create([
+        Warna::Create([
             'type' => json_encode([
                 'type' => '60/6 GREEN',
                 'distance' => 363,
@@ -65,7 +65,7 @@ class TableWarnaSeeder extends Seeder
             'comb' => '#44.1'
         ]);
 
-        TableWarna::Create([
+        Warna::Create([
             'type' => json_encode([
                 'type' => '20/2 RED',
                 'distance' => 231,

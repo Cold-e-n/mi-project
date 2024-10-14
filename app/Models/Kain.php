@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\PosisiWarna;
-use App\Models\TableWarna;
+use App\Models\Warna;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Kain extends Model
@@ -30,6 +29,6 @@ class Kain extends Model
      */
     public function colour(): BelongsTo
     {
-        return $this->belongsTo(TableWarna::class);
+        return $this->belongsTo(Warna::class);
     }
 }

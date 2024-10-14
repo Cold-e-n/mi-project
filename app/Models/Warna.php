@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Kain;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class TableWarna extends Model
+class Warna extends Model
 {
     use HasFactory;
 
@@ -46,7 +46,9 @@ class TableWarna extends Model
         {
             (!array_key_exists('out', $warna)) ? $result = $type : $result = "{$type} + OUT {$out['type']}";
         } elseif ($key == 'distance') {
-            $result = "{$distance} H";
+            $result = $distance;
+        } elseif ($key == 'total') {
+            $result = $total;
         }
 
         return $result;

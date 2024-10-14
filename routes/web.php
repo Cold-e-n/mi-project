@@ -15,7 +15,7 @@ Route::group([
 ], function() {
     Route::controller(WarnaController::class)->group(function() {
         Route::get('/', 'index')->name('index');
-        Route::get('/{tableWarna}', 'show')->name('detail');
+        Route::get('/{warna}', 'show')->name('detail');
     });
 });
 

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kain;
-use App\Models\TableWarna;
+use App\Models\Warna;
+use App\Helpers\DenahWarna;
 use Illuminate\Http\Request;
 
 class WarnaController extends Controller
@@ -14,7 +14,7 @@ class WarnaController extends Controller
     public function index()
     {
         $data = [
-            'warna' => TableWarna::all()
+            'warna' => Warna::all()
         ];
 
         return view('pages.table-warna.index', $data);
@@ -39,10 +39,11 @@ class WarnaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TableWarna $tableWarna)
+    public function show(Warna $warna)
     {
         $data = [
-            'warna' => $tableWarna
+            'warna' => $warna,
+            'denahWarna' => new DenahWarna($warna)
         ];
 
         return view('pages.table-warna.detail', $data);
@@ -51,7 +52,7 @@ class WarnaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TableWarna $tableWarna)
+    public function edit(Warna $warna)
     {
         //
     }
@@ -59,7 +60,7 @@ class WarnaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, TableWarna $tableWarna)
+    public function update(Request $request, Warna $warna)
     {
         //
     }
@@ -67,7 +68,7 @@ class WarnaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TableWarna $tableWarna)
+    public function destroy(Warna $warna)
     {
         //
     }
